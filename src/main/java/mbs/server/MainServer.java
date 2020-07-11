@@ -20,8 +20,7 @@ public class MainServer {
 
 		addBeansContext();
 		
-//		org.apache.log4j.BasicConfigurator.configure();		
-		 DOMConfigurator.configure("log4j.xml");
+		DOMConfigurator.configure("log4j.xml");
 		
 		Server server = new Server();
 		server.start();

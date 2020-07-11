@@ -1,6 +1,8 @@
 package mbs.server;
 
 
+import org.apache.log4j.Logger;
+
 import mbs.cdi.BeansContext;
 import mbs.entity.MessageEntity;
 import mbs.server.frame.strategy.FrameStrategy;
@@ -11,11 +13,13 @@ import mbs.service.MessageService;
 
 public class ProcessMessageFromClientImpl implements ProcessMessageFromClient {
 	
+	private static Logger LOG = Logger.getLogger("file");
 	private FrameStrategyContext frameStrategyContext = new FrameStrategyContext();
 	private MessageService messageService = (MessageService) BeansContext.getInstance().getService(MessageService.class);
 	
 	public Protocol process(String message) throws Exception {
 		
+		LOG.info(message);
 		
 		Protocol protocol = new	ProtocolBuilder.BuilderFromStringHex().builderProtocol(message);
 
