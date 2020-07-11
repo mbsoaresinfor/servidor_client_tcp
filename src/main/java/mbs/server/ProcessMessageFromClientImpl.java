@@ -25,7 +25,7 @@ public class ProcessMessageFromClientImpl implements ProcessMessageFromClient {
 
 		// validacao geral ack
 		// validacao especificas
-		// TODO escrerver em arquivo os dados.
+		
 		
 		MessageEntity messageEntity = new MessageEntity();
 		messageEntity.setMessage(protocol.toString());
