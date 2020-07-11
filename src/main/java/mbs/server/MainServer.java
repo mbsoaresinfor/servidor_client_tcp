@@ -14,6 +14,12 @@ import mbs.service.MessageServiceImpl;
 import mbs.service.UserService;
 import mbs.service.UserServiceImpl;
 
+/**
+ * Classe para iniciar o servidor tcp
+ * 
+ * @author marcelo.soares
+ *
+ */
 public class MainServer {
 	
 	public static void main(String[] args) throws IOException {
@@ -28,7 +34,8 @@ public class MainServer {
 	}
 	
 	private static void addBeansContext() {
-		 RepositoryProxy repositoryProxy =  new RepositoryProxy();
+		// TODO melhorias. Inserir um framework de CDI.
+		RepositoryProxy repositoryProxy =  new RepositoryProxy();
 		MessageService messageService = new MessageServiceImpl(repositoryProxy);
 		UserService userService = new UserServiceImpl(repositoryProxy);
 		DataHourService dataHourService = new DataHourServiceImpl();

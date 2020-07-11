@@ -8,8 +8,8 @@ import javax.swing.JOptionPane;
 
 public class ClientView extends javax.swing.JFrame {
 
-
 	private Client client;
+
     
 	public ClientView() {
         initComponents();

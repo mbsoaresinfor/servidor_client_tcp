@@ -13,7 +13,7 @@ import mbs.service.MessageService;
 
 public class ProcessMessageFromClientImpl implements ProcessMessageFromClient {
 	
-	private static Logger LOG = Logger.getLogger("file");
+	private static Logger LOG = Logger.getLogger("file-server");
 	private FrameStrategyContext frameStrategyContext = new FrameStrategyContext();
 	private MessageService messageService = (MessageService) BeansContext.getInstance().getService(MessageService.class);
 	

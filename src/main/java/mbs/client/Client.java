@@ -16,6 +16,8 @@ import org.apache.log4j.Logger;
 public class Client {
 
 	private static Logger LOG = Logger.getLogger(Client.class);
+	private static Logger LOG_FILE = Logger.getLogger("file-client");
+	
 	
 	public String connect(String address, String portNUmber, String message) throws Exception {
 
@@ -48,6 +50,8 @@ public class Client {
         		LOG.error("I/O error: " + ex.getMessage(),ex);
                 throw ex;
         }
+        
+        LOG_FILE.info(response.toString());
         return response.toString();
     }
 	

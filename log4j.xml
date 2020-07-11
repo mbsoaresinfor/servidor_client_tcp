@@ -10,20 +10,36 @@
 	    </layout>
 	</appender>
 
-	<appender name="file-appender" class="org.apache.log4j.RollingFileAppender">
+	<appender name="file-appender-server" class="org.apache.log4j.RollingFileAppender">
 	    <param name="append" value="true" />
 	    <param name="maxFileSize" value="10MB" />
 	    <param name="maxBackupIndex" value="10" />
-	    <param name="file" value="messages.log" />
+	    <param name="file" value="messagesReceiverServer.log" />
+	    <layout class="org.apache.log4j.PatternLayout">
+		<param name="ConversionPattern"
+			value="%d{yyyy-MM-dd HH:mm:ss} | %m%n" />
+	    </layout>
+	</appender>
+	
+	<appender name="file-appender-client" class="org.apache.log4j.RollingFileAppender">
+	    <param name="append" value="true" />
+	    <param name="maxFileSize" value="10MB" />
+	    <param name="maxBackupIndex" value="10" />
+	    <param name="file" value="messagesReceiverClient.log" />
 	    <layout class="org.apache.log4j.PatternLayout">
 		<param name="ConversionPattern"
 			value="%d{yyyy-MM-dd HH:mm:ss} | %m%n" />
 	    </layout>
 	</appender>
 
-	<category name="file">
+	<category name="file-server">
         <priority value="info"/>
-        <appender-ref ref="file-appender"/>
+        <appender-ref ref="file-appender-server"/>
+    </category>
+	
+	<category name="file-client">
+        <priority value="info"/>
+        <appender-ref ref="file-appender-client"/>
     </category>
 
 	<root>
