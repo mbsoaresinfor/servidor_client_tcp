@@ -2,10 +2,11 @@ package mbs.server.frame.strategy;
 
 import org.apache.log4j.Logger;
 
-import mbs.server.protocol.ConverterData;
-import mbs.server.protocol.Protocol;
-import mbs.server.protocol.ProtocolBuilder;
-import mbs.server.protocol.data.DataSimple;
+import mbs.frame.strategy.FrameStrategy;
+import mbs.protocol.ConverterData;
+import mbs.protocol.Protocol;
+import mbs.protocol.ProtocolBuilder;
+import mbs.protocol.data.DataSimple;
 
 public class MessageTextFrameStrategyImpl implements FrameStrategy {
 

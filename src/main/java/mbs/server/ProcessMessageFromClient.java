@@ -1,6 +1,6 @@
 package mbs.server;
 
-import mbs.server.protocol.Protocol;
+import mbs.protocol.Protocol;
 
 public interface ProcessMessageFromClient {
 

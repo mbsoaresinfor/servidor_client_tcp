@@ -1,13 +1,13 @@
-package mbs.server.protocol.frame.strategy;
+package mbs.frame.strategy;
 
 import static org.junit.Assert.*;
 
 import org.junit.Assert;
 import org.junit.Test;
 
-import mbs.server.frame.strategy.FrameStrategyContext;
-import mbs.server.frame.strategy.Frames;
-import mbs.server.protocol.Protocol;
+import mbs.frame.strategy.FrameStrategyContext;
+import mbs.frame.strategy.Frames;
+import mbs.protocol.Protocol;
 
 public class FrameStrategyContextTest {
 

@@ -1,10 +1,11 @@
-package mbs.server.protocol;
+package mbs.protocol;
 
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
 import junit.framework.Assert;
+import mbs.protocol.Protocol;
 
 public class ProtocolTest {
 

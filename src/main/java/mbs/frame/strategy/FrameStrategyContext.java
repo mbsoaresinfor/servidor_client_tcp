@@ -1,6 +1,9 @@
-package mbs.server.frame.strategy;
+package mbs.frame.strategy;
 
-import mbs.server.protocol.Protocol;
+import mbs.protocol.Protocol;
+import mbs.server.frame.strategy.InformationUserFrameStrategyImpl;
+import mbs.server.frame.strategy.MessageTextFrameStrategyImpl;
+import mbs.server.frame.strategy.RequestDataHourFrameStrategyImpl;
 
 public class FrameStrategyContext {
 	

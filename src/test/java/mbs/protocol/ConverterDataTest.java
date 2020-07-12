@@ -1,12 +1,12 @@
-package mbs.server.protocol;
+package mbs.protocol;
 
 import static org.junit.Assert.*;
 import org.junit.Test;
 import junit.framework.Assert;
-import mbs.server.protocol.ConverterData;
-import mbs.server.protocol.Protocol;
-import mbs.server.protocol.data.DataSimple;
-import mbs.server.protocol.data.InformationUser;
+import mbs.protocol.ConverterData;
+import mbs.protocol.Protocol;
+import mbs.protocol.data.DataSimple;
+import mbs.protocol.data.InformationUser;
 
 
 public class ConverterDataTest {

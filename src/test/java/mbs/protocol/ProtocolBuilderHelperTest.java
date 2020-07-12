@@ -1,4 +1,4 @@
-package mbs.server.protocol;
+package mbs.protocol;
 
 import static org.junit.Assert.*;
 
@@ -9,7 +9,7 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
-import mbs.server.protocol.ProtocolBuilderHelper;
+import mbs.protocol.ProtocolBuilderHelper;
 
 public class ProtocolBuilderHelperTest {
 

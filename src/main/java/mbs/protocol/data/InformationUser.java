@@ -1,4 +1,4 @@
-package mbs.server.protocol.data;
+package mbs.protocol.data;
 
 import java.io.Serializable;
 

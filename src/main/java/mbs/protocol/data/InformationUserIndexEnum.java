@@ -1,4 +1,4 @@
-package mbs.server.protocol.data;
+package mbs.protocol.data;
 
 public enum InformationUserIndexEnum {
 

@@ -9,7 +9,7 @@ import java.net.Socket;
 
 import org.apache.log4j.Logger;
 
-import mbs.server.protocol.Protocol;
+import mbs.protocol.Protocol;
 
 public class ClientServer implements Runnable{
 

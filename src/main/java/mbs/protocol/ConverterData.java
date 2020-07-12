@@ -1,10 +1,11 @@
-package mbs.server.protocol;
+package mbs.protocol;
 
 
 import java.util.List;
-import mbs.server.protocol.data.DataSimple;
-import mbs.server.protocol.data.InformationUser;
-import mbs.server.protocol.data.InformationUserIndexEnum;
+
+import mbs.protocol.data.DataSimple;
+import mbs.protocol.data.InformationUser;
+import mbs.protocol.data.InformationUserIndexEnum;
 
 public class ConverterData {
 

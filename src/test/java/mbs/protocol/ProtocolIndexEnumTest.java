@@ -1,10 +1,12 @@
-package mbs.server.protocol;
+package mbs.protocol;
 
 import static org.junit.Assert.*;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
 import org.junit.Test;
+
+import mbs.protocol.ProtocolIndexEnum;
 
 public class ProtocolIndexEnumTest {
 

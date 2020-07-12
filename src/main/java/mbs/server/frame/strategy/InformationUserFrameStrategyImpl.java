@@ -5,10 +5,11 @@ import org.apache.log4j.Logger;
 import mbs.cdi.BeansContext;
 import mbs.entity.MessageEntity;
 import mbs.entity.UserEntity;
-import mbs.server.protocol.ConverterData;
-import mbs.server.protocol.Protocol;
-import mbs.server.protocol.ProtocolBuilder;
-import mbs.server.protocol.data.InformationUser;
+import mbs.frame.strategy.FrameStrategy;
+import mbs.protocol.ConverterData;
+import mbs.protocol.Protocol;
+import mbs.protocol.ProtocolBuilder;
+import mbs.protocol.data.InformationUser;
 import mbs.service.UserService;
 
 public class InformationUserFrameStrategyImpl implements FrameStrategy {

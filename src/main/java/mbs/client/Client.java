@@ -8,6 +8,7 @@ import java.io.OutputStream;
 import java.io.PrintWriter;
 import java.net.Socket;
 import java.net.UnknownHostException;
+import java.util.ArrayList;
 
 import org.apache.log4j.Logger;
 
@@ -54,5 +55,15 @@ public class Client {
         LOG_FILE.info(response.toString());
         return response.toString();
     }
+	
+	private String processResponse(String response) {
+		StringBuffer ret = new StringBuffer();
+		
+		
+		
+		return ret.toString();
+		
+		
+	}
 	
 }

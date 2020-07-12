@@ -1,7 +1,7 @@
-package mbs.server.frame.strategy;
+package mbs.frame.strategy;
 
 
-import mbs.server.protocol.Protocol;
+import mbs.protocol.Protocol;
 
 public interface FrameStrategy {
 

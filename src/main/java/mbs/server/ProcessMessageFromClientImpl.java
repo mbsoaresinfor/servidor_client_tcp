@@ -5,10 +5,10 @@ import org.apache.log4j.Logger;
 
 import mbs.cdi.BeansContext;
 import mbs.entity.MessageEntity;
-import mbs.server.frame.strategy.FrameStrategy;
-import mbs.server.frame.strategy.FrameStrategyContext;
-import mbs.server.protocol.Protocol;
-import mbs.server.protocol.ProtocolBuilder;
+import mbs.frame.strategy.FrameStrategy;
+import mbs.frame.strategy.FrameStrategyContext;
+import mbs.protocol.Protocol;
+import mbs.protocol.ProtocolBuilder;
 import mbs.service.MessageService;
 
 public class ProcessMessageFromClientImpl implements ProcessMessageFromClient {

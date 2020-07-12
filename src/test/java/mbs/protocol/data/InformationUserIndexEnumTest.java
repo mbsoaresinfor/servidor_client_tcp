@@ -1,8 +1,10 @@
-package mbs.server.protocol.data;
+package mbs.protocol.data;
 
 import static org.junit.Assert.*;
 import org.junit.Assert;
 import org.junit.Test;
+
+import mbs.protocol.data.InformationUserIndexEnum;
 
 public class InformationUserIndexEnumTest {
 	

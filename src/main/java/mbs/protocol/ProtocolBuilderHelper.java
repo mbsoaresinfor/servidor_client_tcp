@@ -1,13 +1,10 @@
-package mbs.server.protocol;
+package mbs.protocol;
 
 import java.util.ArrayList;
 import java.util.List;
 
 class ProtocolBuilderHelper {
 	 
-//		public static final int INDEX_BYTE_ON_PROTOCOL = 1;
-//		public static final int INDEX_FRAME_ON_PROTOCOL = 2;
-//		public static final int INDEX_INIT_DATA_ON_PROTOCOL = 3;
 	
 		public  int getIndexCrc(int sizeData) {
 			return sizeData / 2 + 1;

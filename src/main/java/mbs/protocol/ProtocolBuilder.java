@@ -1,8 +1,8 @@
-package mbs.server.protocol;
+package mbs.protocol;
 
 import java.util.List;
 
-import mbs.server.frame.strategy.Frames;
+import mbs.frame.strategy.Frames;
 
 public class ProtocolBuilder {
 

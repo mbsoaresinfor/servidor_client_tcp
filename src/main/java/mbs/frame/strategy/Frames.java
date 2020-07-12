@@ -1,4 +1,4 @@
-package mbs.server.frame.strategy;
+package mbs.frame.strategy;
 
 public enum Frames {
 
