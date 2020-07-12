@@ -15,6 +15,7 @@ import mbs.frame.strategy.Frames;
 import mbs.protocol.ConverterData;
 import mbs.protocol.Protocol;
 import mbs.protocol.ProtocolBuilder;
+import mbs.protocol.ProtocolBuilderHelper;
 import mbs.protocol.data.DataSimple;
 import mbs.service.DataHourService;
 
@@ -24,6 +25,7 @@ public class RequestDataHourFrameStrategyImpl implements FrameStrategy {
 
 	private static Logger LOG = Logger.getLogger(RequestDataHourFrameStrategyImpl.class);
 	private DataHourService dataHourService = (DataHourService) BeansContext.getInstance().getService(DataHourService.class);
+	private ProtocolBuilderHelper helper = new ProtocolBuilderHelper();
 	
 	@Override
 	public Protocol executeStrategy(Protocol protocol) throws Exception {
@@ -36,13 +38,16 @@ public class RequestDataHourFrameStrategyImpl implements FrameStrategy {
 		
 		Date date = dataHourService.getDataFromLocal(dataSimple.getData());
 		
+		Calendar.getInstance().setTime(date);	
+		
+		 
 		StringBuffer dataToSend =  new StringBuffer();
-		dataToSend.append(Integer.toHexString(date.getDay()));
-		dataToSend.append(Integer.toHexString(date.getMonth()));
-		dataToSend.append(Integer.toHexString(date.getYear()));
-		dataToSend.append(Integer.toHexString(date.getHours()));
-		dataToSend.append(Integer.toHexString(date.getMinutes()));
-		dataToSend.append(Integer.toHexString(date.getSeconds()));		
+		dataToSend.append(helper.toHexString(Calendar.getInstance().get(Calendar.DAY_OF_MONTH)));
+		dataToSend.append(helper.toHexString(Calendar.getInstance().get(Calendar.MONTH) +1));
+		dataToSend.append(helper.toHexString(Calendar.getInstance().get(Calendar.YEAR) % 100));
+		dataToSend.append(helper.toHexString(Calendar.getInstance().get(Calendar.HOUR)));
+		dataToSend.append(helper.toHexString(Calendar.getInstance().get(Calendar.MINUTE)));
+		dataToSend.append(helper.toHexString(Calendar.getInstance().get(Calendar.SECOND)));		
 		
 		return new ProtocolBuilder.Builder().
 				addByte("0B").

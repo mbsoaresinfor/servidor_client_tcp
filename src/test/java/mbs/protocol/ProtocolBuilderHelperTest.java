@@ -102,5 +102,16 @@ public class ProtocolBuilderHelperTest {
 		}	
 	}
 	
+	@Test
+	public void tesToHexString() throws Exception {
+		String res = helper.toHexString(12);
+		Assert.assertEquals("0C", res);
+		
+		res = helper.toHexString(0);
+		Assert.assertEquals("00", res);
+		
+		res = helper.toHexString(255);
+		Assert.assertEquals("FF", res);
+	}
 
 }

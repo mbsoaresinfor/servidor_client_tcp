@@ -16,7 +16,7 @@ public class ConverterData {
 		validateParam(protocol);
 		
 		DataSimple dataSimple = new DataSimple();
-		dataSimple.setData(	this.hexToAscii(protocol.getData()));
+		dataSimple.setData(	helper.hexToAscii(protocol.getData()));
 		return dataSimple;
 	}
 
@@ -39,7 +39,7 @@ public class ConverterData {
 		int altura = Integer.parseInt(dataInformationUser.get(InformationUserIndexEnum.Altura.getValue()),16);
 		int tamanhoNome = Integer.parseInt(dataInformationUser.get(InformationUserIndexEnum.TamanhoNome.getValue()),16);
 		int tamanhoNomeFinal = tamanhoNome + InformationUserIndexEnum.Nome.getValue();
-		String nome = hexToAscii(helper.parserData(dataInformationUser, InformationUserIndexEnum.Nome.getValue(), tamanhoNomeFinal));
+		String nome = helper.hexToAscii(helper.parserData(dataInformationUser, InformationUserIndexEnum.Nome.getValue(), tamanhoNomeFinal));
 		ret.setAltura(altura);
 		ret.setIdade(idade);
 		ret.setNome(nome);
@@ -53,15 +53,6 @@ public class ConverterData {
 	
 	
 	
-	private  String hexToAscii(String hexStr) {
-	    StringBuilder output = new StringBuilder("");
-	    
-	    for (int i = 0; i < hexStr.length(); i += 2) {
-	        String str = hexStr.substring(i, i + 2);
-	        output.append((char) Integer.parseInt(str, 16));
-	    }
-	    
-	    return output.toString();
-	}
+	
 
 }

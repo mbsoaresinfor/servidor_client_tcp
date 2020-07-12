@@ -5,8 +5,9 @@ A comunicação é realizada atraves da porta (2222), podendo ser alterada.
 As mensagens recebidas no servidor são salvas no banco de dados H2 em memória, usando
 hibernate como framework objeto-relacional.
 
-Também são salvo em arquivos as mensagens recebidas tanto no client quanto no servidor.
-Os nomes são: messagesReceiverClient.log e messagesReceiverServer.log
+Também são salvos em arquivos as mensagens recebidas tanto do client quanto no servidor, onde 
+
+seus nomes são respectivamente: messagesReceiverClient.log e messagesReceiverServer.log
 
 As mensagens do client devem ser enviado no formato StringHexadecimal, conforme
 definido no protocolo. 
@@ -19,4 +20,11 @@ classe: mbs.server.MainServer
 
 # Executar o Client
 classe: mbs.client.MainClient
+
+## Exemplos de requisição
+0A0CA16d617263656c6fDC0D 								= FRAME 01
+
+0A10A22650AB076d617263656c6f160D  						= FRAME 02
+
+0A16A3416D65726963612F53616F5F5061756C6FCD0D			= FRAME 03
 

@@ -2,14 +2,13 @@ package mbs.server;
 
 import java.io.BufferedReader;
 import java.io.Closeable;
-import java.io.IOException;
 import java.io.InputStreamReader;
 import java.io.PrintWriter;
 import java.net.Socket;
-
 import org.apache.log4j.Logger;
-
+import mbs.frame.strategy.Frames;
 import mbs.protocol.Protocol;
+import mbs.protocol.ProtocolBuilder;
 
 public class ClientServer implements Runnable{
 
@@ -41,16 +40,36 @@ public class ClientServer implements Runnable{
         	message = trimMessage(message);
         	LOG.info(toString() + ", processando mensagem " + message);
 	        Protocol messageToSendClient =  processMessageFromClient.process(message);
-	        out.write(messageToSendClient.toString());
-	        out.flush();
-
+	        write(out,messageToSendClient.toString());
 	        	
 	     } catch (Throwable e) {
 	        	LOG.error("Error on " + toString() ,e);
+		        write(out,builderProtocolErrorServer().toString());
 	     }finally {
 	        	closeCloseable(new Closeable[] {socket,in,out});	        	
 		}	      
 	 }	
+	
+	private  Protocol builderProtocolErrorServer() {
+		Protocol protocol = null;
+		try {
+			protocol = new ProtocolBuilder.Builder().
+					addFrame(Frames.ErrorServer.getFrame()).
+					addByte("05").
+					addData("").
+					addCrc("").
+					builderProtocol();
+		}catch(Exception e) {
+			LOG.error(e);
+		}
+		return protocol;
+	}
+	
+	private void write( PrintWriter out, String messageToSendClient) {
+		LOG.info("Enviando mensagem para o cliente: " + messageToSendClient); 
+		out.write(messageToSendClient.toString());
+         out.flush();
+	}
 	
 	private String trimMessage(String message) {
 		String ret = message;

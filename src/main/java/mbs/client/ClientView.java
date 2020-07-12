@@ -26,12 +26,13 @@ public class ClientView extends javax.swing.JFrame {
     	String address = jTextFieldAddresServer.getText();
     	String port = jTextField1.getText();
     	String message = jTextFieldMessage.getText();
+    	jTextFieldResponse.setText("");
     	try {
     		String response=   	this.client.connect(address, port, message);
     		jTextFieldResponse.setText(response);
     	
     	}catch(Exception e) {
-    		JOptionPane.showMessageDialog(null, "Error: " + e.getMessage());
+    		JOptionPane.showMessageDialog(null, e.getMessage(),"ERRO",JOptionPane.ERROR_MESSAGE);
     	}
     	
     	
