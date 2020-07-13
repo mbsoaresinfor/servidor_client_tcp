@@ -18,8 +18,12 @@ será notificado na console e enviado um frame de erro (0X50).
 # Executar o Servidor
 classe: mbs.server.MainServer
 
+java version 7+
+
 # Executar o Client
 classe: mbs.client.MainClient
+
+java version 7+
 
 ## Exemplos de requisição
 0A0CA16d617263656c6fDC0D 								= FRAME 01
