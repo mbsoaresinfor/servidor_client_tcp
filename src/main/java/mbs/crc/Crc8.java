@@ -1,5 +1,7 @@
 package mbs.crc;
 
+import mbs.protocol.Protocol;
+
 /**
  * Created by anthony on 15.05.2017.
  */
@@ -18,4 +20,32 @@ public class Crc8 {
     public static final AlgoParams[] Params = new AlgoParams[]{
             Crc8, Crc8Cdma2000, Crc8Darc, Crc8DvbS2, Crc8Ebu, Crc8ICode, Crc8Itu, Crc8Maxim, Crc8Rohc, Crc8Wcdma
     };
+    
+	public final static int CRC_POLYNOM = 0x9c;
+
+    public final static int CRC_PRESET = 0xFF;
+
+    
+    // codidgo retirado da pagina:
+    // https://stackoverflow.com/questions/25284556/translate-crc8-from-c-to-java
+    public static void calc(Protocol protocol) {
+
+    	int crc_U = CRC_PRESET;
+        byte[] frame_U =  protocol.getData().getBytes();
+        	//{1, 56, -23, 3, 0, 19, 0, 0, 2, 0, 3, 13, 8, -34, 7, 9, 42, 18, 26, -5, 54, 11, -94, -46, -128, 4, 48, 52, 0, 0, 0, 0, 0, 0, 0, 0, 4, 1, 1, -32, -80, 0, 98, -5, 71, 0, 64, 0, 0, 0, 0, -116, 1, 104, 2};
+        for(int i = 0; i < frame_U.length; i++) {
+            crc_U ^= Byte.toUnsignedInt(frame_U[i]);
+            for(int j = 0; j < 8; j++) {
+                if((crc_U & 0x01) != 0) {
+                    crc_U = (crc_U >>> 1) ^ CRC_POLYNOM;
+                } else {
+                    crc_U = (crc_U >>> 1);
+                }
+            }
+        }
+        System.out.println(Integer.toUnsignedString(crc_U));
+    	
+
+    }
+    
 }

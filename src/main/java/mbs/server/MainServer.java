@@ -5,6 +5,7 @@ import java.io.IOException;
 import org.apache.log4j.xml.DOMConfigurator;
 
 import mbs.cdi.BeansContext;
+import mbs.protocol.validation.ValidationCRCProtocol;
 import mbs.repository.Repository;
 import mbs.repository.RepositoryProxy;
 import mbs.service.DataHourService;
@@ -44,6 +45,10 @@ public class MainServer {
 		BeansContext.getInstance().addService(MessageService.class, messageService);
 		BeansContext.getInstance().addService(UserService.class, userService);
 		BeansContext.getInstance().addService(DataHourService.class, dataHourService);
+		BeansContext.getInstance().addService(ValidationCRCProtocol.class, new ValidationCRCProtocol());
+		
+		
+		
 		
 	}
 	
